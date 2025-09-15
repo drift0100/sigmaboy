@@ -1,0 +1,167 @@
+/* General page styling */
+body {
+    background: linear-gradient(135deg, rgba(137, 247, 254, 0.6), rgba(102, 166, 255, 0.6)), url("download.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    padding: 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+/* Back link container */
+.back-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Back link styling */
+.back-link a {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.back-link a:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Form container */
+form {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    width: 100%;
+    margin: 20px auto;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 15px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Inputs and dropdowns */
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.6);
+    color: #000;
+    transition: all 0.3s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Specific styling for dropdowns to remove default arrow */
+select {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23000" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 30px;
+}
+
+/* Hover & focus animation for inputs and dropdowns */
+input:hover,
+select:hover {
+    background: rgba(255, 255, 255, 0.85);
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+}
+
+/* Stronger animation/feedback when a select dropdown is focused (clicked/active) */
+input:focus,
+select:focus {
+    background: rgba(255, 255, 255, 0.95);
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+    border: 1px solid #007bff;
+    outline: none;
+}
+
+/* Button */
+button {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Results section */
+.results {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(0, 51, 102, 0.6);
+    color: #ffffff;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Journey Summary box */
+#journey-summary {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    color: #fff;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Animation for the selected dropdown option */
+select option:checked {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}

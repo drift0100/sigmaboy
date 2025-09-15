@@ -1,0 +1,111 @@
+/* General page styling */
+body {
+    background: linear-gradient(135deg, rgba(137, 247, 254, 0.6), rgba(102, 166, 255, 0.6)), url("image_d3be16.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    padding: 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+/* Page title */
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* The main transparent, blurry box */
+.content-box-container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Article and Sidebar */
+.wiki-article {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.sidebar-container {
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Media query for desktop layout */
+@media (min-width: 768px) {
+    .content-box-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .wiki-article {
+        padding-right: 40px;
+    }
+    .sidebar-container {
+        width: 300px;
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+        padding-left: 20px;
+    }
+}
+
+/* Headings and text inside the content box */
+h2, h3 {
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+p, li {
+    color: #ffffff;
+}
+
+a {
+    color: #c0f7ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* The small, separate evaluation box */
+.evaluation-box {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    text-align: center;
+    margin-top: 20px;
+    max-width: 400px; /* Limits the width of this box */
+    width: 100%;
+}
+
+.evaluation-box a {
+    color: #ffffff;
+    font-weight: bold;
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2NY Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --link-color: #3366cc;
+            --header-bg: #f5f5f5;
+            --main-bg: #ffffff;
+            --border-color: #a2a9b1;
+            /* New variables for the blurry box and background */
+            --blurry-box-bg: rgba(255, 255, 255, 0.1);
+            --blurry-box-border: rgba(255, 255, 255, 0.2);
+            --blurry-box-text: #ffffff;
+            --blurry-box-heading-text: #ffffff;
+            --link-accent-color: #89e6ff;
+        }
+
+        /* General page styling */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            /* Main background that you can easily change */
+            background: linear-gradient(135deg, rgba(137, 247, 254, 0.6), rgba(102, 166, 255, 0.6)), url("download.jpg") no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        /* Wiki container - The main transparent and blurry box */
+        .wiki-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            background-color: var(--blurry-box-bg);
+            border: 1px solid var(--blurry-box-border);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: var(--blurry-box-text);
+        }
+
+        /* Header within the blurry box */
+        .wiki-header {
+            background-color: transparent;
+            border-bottom: 1px solid var(--blurry-box-border);
+            padding: 1rem 2rem;
+        }
+
+        .wiki-main-content {
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .wiki-main-content {
+                flex-direction: row;
+            }
+        }
+
+        .wiki-article {
+            flex: 1;
+            padding-right: 1.5rem;
+        }
+
+        .wiki-sidebar {
+            width: 100%;
+            margin-top: 1rem;
+            border-left: none;
+            padding-left: 0;
+            border-top: 1px solid var(--blurry-box-border);
+            padding-top: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .wiki-sidebar {
+                width: 300px;
+                margin-top: 0;
+                border-left: 1px solid var(--blurry-box-border);
+                padding-left: 1.5rem;
+                border-top: none;
+                padding-top: 0;
+            }
+        }
+
+        /* Text colors inside the blurry box */
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            color: var(--blurry-box-heading-text);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        h1 { font-size: 2.25rem; }
+        h2 { font-size: 1.75rem; border-bottom: 1px solid rgba(255, 255, 255, 0.3); padding-bottom: 0.5rem; margin-top: 2rem; }
+        h3 { font-size: 1.25rem; }
+
+        p, li {
+            color: var(--blurry-box-text);
+        }
+
+        a { 
+            color: var(--link-accent-color); 
+            text-decoration: none; 
+            transition: color 0.3s ease;
+        }
+        a:hover { 
+            text-decoration: underline; 
+            color: #c0f7ff; 
+        }
+
+        /* Evaluation link box styling */
+        .link-box {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid var(--link-accent-color);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        .link-box a {
+            color: var(--blurry-box-text);
+            font-weight: bold;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes pulseBorder {
+            0% { box-shadow: 0 0 0 0 rgba(137, 247, 254, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(137, 247, 254, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(137, 247, 254, 0); }
+        }
+        .animate-pulse-border {
+            animation: pulseBorder 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="wiki-container rounded-lg shadow-md my-8">
+        <header class="wiki-header rounded-t-lg">
+            <h1 class="text-3xl font-bold text-center py-4">2NY Media</h1>
+        </header>
+
+        <main class="wiki-main-content">
+            <article class="wiki-article">
+                <section id="definition-of-streaming" class="animate-fade-in">
+                    <h2 class="text-2xl mt-0">Definition of Streaming</h2>
+                    <p class="mt-4">
+                        Streaming is when you watch or listen to something online without downloading the whole file first. For example, when you watch YouTube or Netflix, the video plays right away while the rest of it loads in the background. 
+                    </p>
+                </section>
+
+                <section id="types-of-streaming-content" class="animate-fade-in" style="animation-delay: 0.2s;">
+                    <h2 class="text-2xl">Types of Streaming Content</h2>
+                    <p class="mt-4">
+                        <ul>
+                            <li><b>Live Streams</b> – events or shows that happen in real time, like gaming streams or live concerts.</li>
+                            <li><b>Video on Demand (VOD)</b> – movies and series that you can watch whenever you want (Netflix, Disney+)</li>
+                            <li><b>Audio Streaming</b> – music or podcasts that people can listen to online (Spotify, Apple Music).</li>
+                        </ul>
+                    </p>
+                </section>
+
+                <section id="platforms-used-for-streaming" class="animate-fade-in" style="animation-delay: 0.4s;">
+                    <h2 class="text-2xl">Platforms Used for Streaming</h2>
+                    <p class="mt-4">
+                        <b>Netflix, Disney+, Amazon Prime Video</b> for movies and series.
+                        <br><br>
+                        <b>YouTube</b> for both videos and live streams.
+                        <br><br>
+                        <b>Twitch</b> for gaming and live chats.
+                        <br><br>
+                        <b>TikTok, Instagram, Facebook Live</b> for short, fun, and social videos.
+                        <br><br>
+                        <b>Spotify, Apple Music</b> for music and podcasts.
+                    </p>
+                </section>
+
+                <section id="viewers-analysis-for-each-streaming-category" class="animate-fade-in" style="animation-delay: 0.6s;">
+                    <h2 class="text-2xl">Viewers Analysis for Each Streaming Category</h2>
+                    <p class="mt-4">
+                        <b>Live Gaming Streams</b> – mostly teens and young adults. They watch to have fun, learn new skills, or feel part of a gaming community.
+                        <br><br>
+                        <b>VOD (Movies/Series)</b> – watched by almost all age groups. People like to binge-watch and follow popular shows.
+                        <br><br>
+                        <b>Audio Streaming</b> – popular for multitasking, especially during workouts, travel, or studying.
+                        <br><br>
+                        <b>IRL/Niche Streams</b> – viewers are usually loyal fans or community members who like authentic and relatable content.
+                    </p>
+                </section>
+                
+                <section id="needs-of-viewers" class="animate-fade-in" style="animation-delay: 0.8s;">
+                    <h2 class="text-2xl">Needs of Viewers</h2>
+                    <p class="mt-4">
+                        Viewers usually expect these things from streaming:
+                        <ol>
+                            <li>Entertainment</li>
+                            <li>Community</li>
+                            <li>Convenience</li>
+                            <li>Personalization</li>
+                            <li>Quality</li>
+                            <li>Value</li>
+                        </ol>
+                    </p>
+                </section>
+
+                <section id="characteristics-of-a-good-stream" class="animate-fade-in" style="animation-delay: 1.0s;">
+                    <h2 class="text-2xl">Characteristics of a Good Stream</h2>
+                    <p class="mt-4">
+                        <ul>
+                            <li><b>Clear quality</b> – good sound and video, no lag.</li>
+                            <li><b>Easy to access</b> – subtitles, mobile-friendly, and smooth to use.</li>
+                            <li><b>Engaging content</b> – something interesting with a strong start.</li>
+                            <li><b>Interaction</b> – chats, polls, and Q&A that keep the viewers involved.</li>
+                            <li><b>Safe environment</b> – moderated chat so everyone feels welcome.</li>
+                            <li><b>Easy searchable</b> – clear titles, tags, and thumbnails so more people can find it.</li>
+                        </ul>
+                    </p>
+                </section>
+
+                <div class="mt-12 text-center text-xl font-semibold p-4 rounded-lg link-box animate-pulse-border">
+                    <p>Get your <a href="index2.html" class="font-extrabold hover:underline transition-colors duration-300">evaluations</a> on our page</p>
+                </div>
+            </article>
+
+            <aside class="wiki-sidebar">
+                <nav>
+                    <h3 class="font-bold text-lg mb-4">Contents</h3>
+                    <ul class="list-none space-y-2">
+                        <li><a href="#definition-of-streaming">Definition of Streaming</a></li>
+                        <li><a href="#types-of-streaming-content">Types of Streaming Content</a></li>
+                        <li><a href="#platforms-used-for-streaming">Platforms Used for Streaming</a></li>
+                        <li><a href="#viewers-analysis-for-each-streaming-category">Viewers Analysis for Each Streaming Category</a></li>
+                        <li><a href="#needs-of-viewers">Needs of Viewers</a></li>
+                        <li><a href="#characteristics-of-a-good-stream">Characteristics of a Good Stream</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.animate-fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

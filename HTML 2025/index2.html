@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLabs Streaming Journey</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="back-link">
+        <a href="index.html">
+            &larr; Back
+        </a>
+    </div>
+
+    <h1>Student Evaluation Page</h1>
+
+    <form id="streamForm">
+        <label>Gender:
+            <select id="gender">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Non-binary</option>
+                <option>Prefer not to say</option>
+            </select>
+        </label>
+
+        <label>Age:
+            <input type="number" id="age" min="1" max="100" placeholder="Enter your age">
+        </label>
+
+        <label>Marital Status:
+            <select id="maritalStatus">
+                <option>Single</option>
+                <option>Married</option>
+                <option>Widowed</option>
+                <option>Divorced</option>
+                <option>Separated</option>
+                <option>Prefer not to say</option>
+            </select>
+        </label>
+
+        <label>Nationality:
+            <input type="text" id="nationality" placeholder="Enter your nationality">
+        </label>
+
+        <label>Educational Attainment:
+            <select id="educationalAttainment">
+                <option>Elementary Graduate</option>
+                <option>High School Graduate</option>
+                <option>College Undergraduate</option>
+                <option>Bachelor's Degree</option>
+                <option>Master's Degree</option>
+                <option>Doctorate</option>
+                <option>Other</option>
+            </select>
+        </label>
+
+        <label>Employment Status:
+            <select id="employmentStatus">
+                <option>Employed</option>
+                <option>Unemployed</option>
+                <option>Student</option>
+                <option>Self-employed</option>
+                <option>Retired</option>
+                <option>Other</option>
+            </select>
+        </label>
+
+        <label>Household Income:
+            <select id="householdIncome">
+                <option>Below $25,000</option>
+                <option>$25,000 - $49,999</option>
+                <option>$50,000 - $74,999</option>
+                <option>$75,000 - $99,999</option>
+                <option>$100,000 or more</option>
+                <option>Prefer not to say</option>
+            </select>
+        </label>
+        
+        <label>Type of Content You Stream/Watch:
+            <select id="contentType">
+                <option>Gaming</option>
+                <option>Education</option>
+                <option>Podcast</option>
+                <option>Documentary</option>
+                <option>Other</option>
+            </select>
+        </label>
+
+        <button type="button" onclick="analyzeData()">Submit Journey</button>
+    </form>
+
+    <div class="results" id="results"></div>
+
+    <script>
+        function analyzeData() {
+            const gender = document.getElementById("gender").value;
+            const age = document.getElementById("age").value;
+            const maritalStatus = document.getElementById("maritalStatus").value;
+            const nationality = document.getElementById("nationality").value;
+            const educationalAttainment = document.getElementById("educationalAttainment").value;
+            const employmentStatus = document.getElementById("employmentStatus").value;
+            const householdIncome = document.getElementById("householdIncome").value;
+            const contentType = document.getElementById("contentType").value;
+
+            document.getElementById("results").innerHTML = `
+                <h2>Demographic Summary</h2>
+                <p><strong>Gender:</strong> ${gender}</p>
+                <p><strong>Age:</strong> ${age}</p>
+                <p><strong>Marital Status:</strong> ${maritalStatus}</p>
+                <p><strong>Nationality:</strong> ${nationality}</p>
+                <p><strong>Educational Attainment:</strong> ${educationalAttainment}</p>
+                <p><strong>Employment Status:</strong> ${employmentStatus}</p>
+                <p><strong>Household Income:</strong> ${householdIncome}</p>
+                <p><strong>Content Type:</strong> ${contentType}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
